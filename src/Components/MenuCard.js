@@ -1,23 +1,48 @@
 import React from "react";
+// import { NavLink } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+// import Modal from "react-bootstrap/Modal";
 import "./../Css/MenuCard.css";
 
 const MenuCard = (props) => {
+  // const [show, setShow] = useState(false);
+  // const handleClose = () => setShow(false);
+  // const handleShow = () => setShow(true);
+
   return (
-    <div className="text-center my-5">
-      <Card style={{ width: "18rem" }}>
-        <Card.Img className="menu-img" variant="top" src={props.img} />
-        <Card.Body>
-          <Card.Title>{props.title}</Card.Title>
-          <Card.Text className="menu-ingredients">
-            {props.ingredients}
-          </Card.Text>
-          <Card.Text> Price: {props.price}</Card.Text>
-          <Button variant="danger">Add to Cart</Button>
-        </Card.Body>
-      </Card>
-    </div>
+    <>
+      <div className="text-center my-5">
+        <Card style={{ width: "18rem" }}>
+          <Card.Img className="menu-img" variant="top" src={props.img} />
+          <Card.Body>
+            <Card.Title>{props.title}</Card.Title>
+            <Card.Text className="menu-ingredients text-truncate">
+              {props.ingredients}
+            </Card.Text>
+            <Card.Text> Price: {props.price}</Card.Text>
+
+            <Button variant="danger" onClick={props.addtocart}>
+              Select
+            </Button>
+          </Card.Body>
+        </Card>
+      </div>
+
+      {/* Modal */}
+
+      {/* <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Add to Cart</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="danger" onClick={handleClose}>
+            Add to Cart
+          </Button>
+        </Modal.Footer>
+      </Modal> */}
+    </>
   );
 };
 

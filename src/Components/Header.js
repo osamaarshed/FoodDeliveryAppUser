@@ -46,6 +46,14 @@ const Header = () => {
                 </NavLink>
               </Nav.Link>
               <Nav.Link>
+                <NavLink
+                  to="/cart"
+                  className="text-secondary text-decoration-none"
+                >
+                  Cart
+                </NavLink>
+              </Nav.Link>
+              <Nav.Link>
                 <NavLink to="/" className="text-secondary text-decoration-none">
                   Logout
                 </NavLink>
