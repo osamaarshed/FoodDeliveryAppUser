@@ -1,0 +1,10 @@
+.cart-img {
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+  border: 1px solid;
+}
+/* .cart-overflow {
+  overflow-x: hidden;
+  text-overflow: "----";
+} */
