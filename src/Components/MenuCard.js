@@ -3,12 +3,18 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 // import Modal from "react-bootstrap/Modal";
+import { useNavigate } from "react-router-dom";
 import "./../Css/MenuCard.css";
 
 const MenuCard = (props) => {
   // const [show, setShow] = useState(false);
   // const handleClose = () => setShow(false);
   // const handleShow = () => setShow(true);
+  const navigate = useNavigate();
+  const loginToOrder = () => {
+    navigate("/login");
+  };
+  const jwttoken = localStorage.getItem("userJwtToken");
 
   return (
     <>
@@ -22,9 +28,17 @@ const MenuCard = (props) => {
             </Card.Text>
             <Card.Text> Price: {props.price}</Card.Text>
 
-            <Button variant="danger" onClick={props.addtocart}>
-              Select
-            </Button>
+            {jwttoken ? (
+              <>
+                <Button variant="danger" onClick={props.addtocart}>
+                  Select
+                </Button>
+              </>
+            ) : (
+              <Button variant="danger" onClick={loginToOrder}>
+                Login to Order
+              </Button>
+            )}
           </Card.Body>
         </Card>
       </div>

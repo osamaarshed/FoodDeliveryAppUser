@@ -3,13 +3,10 @@ import axios from "axios";
 import Header from "../Components/Header";
 import MenuCard from "../Components/MenuCard";
 import LoaderSpinner from "../Components/LoaderSpinner";
-// import Alert from "react-bootstrap/Alert";
-// import { NavLink } from "react-bootstrap";
 
 const Menu = () => {
   const [loader, setLoader] = useState(false);
   const [menu, setMenu] = useState();
-  // const [cartdata, setCartData] = useState([]);
   useEffect(() => {
     fetchmenu();
   }, []);
@@ -51,11 +48,6 @@ const Menu = () => {
                           inputfile: item.inputfile,
                         },
                       ];
-
-                      // const myArrayString = localStorage.getItem("cartdata");
-                      // const myArray = JSON.parse(myArrayString);
-                      // myArray.push(obj);
-                      // const updatedArrayString = JSON.stringify(obj);
                       const stringObj = JSON.stringify(obj);
                       localStorage.setItem("cartdata", stringObj);
                       alert("Added To Cart");

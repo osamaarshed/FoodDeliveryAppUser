@@ -7,6 +7,8 @@ import Contact from "./Pages/Contact";
 import MyOrders from "./Pages/MyOrders";
 import Menu from "./Pages/Menu";
 import Cart from "./Pages/Cart";
+import Login from "./Pages/Login";
+import Signup from "./Pages/Signup";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/Cart" element={<Cart />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
           </Routes>
         </BrowserRouter>
       </div>
